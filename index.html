@@ -31,7 +31,7 @@
                 </v-card-text>
               </v-card>
               <p class="text-xs-center">Welcome to the Vuetify Simple Template</p>
-              <h2 class="primary--text">Important Links</h2>
+              <h2 class="primary--text">Simple SPA</h2>
               <div class="intro">
                 <v-list>
                   <v-list-item>
@@ -80,6 +80,53 @@
                   </v-list-item>
                 </v-list>
               </div>
+              <table>
+  <thead>
+    <tr>
+      <th></th>
+      <th v-for="header in headers" v-text="header"></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <template v-for="(item, index) in items">
+      <tr>
+        <td>
+          <v-checkbox filled v-bind:id="'checkbox3' + index" class="text-xs-center"></v-checkbox>
+        </td>
+        <td v-for="data in item" v-text="data"></td>
+        <td>
+          <v-menu
+            transition="v-slide-y-transition" 
+            origin="top center"
+            top
+            right
+          >
+            <v-btn slot="activator">Options</v-btn>
+            <v-list>
+              <v-list-item>
+                <v-list-tile>
+                  <v-list-tile-title>Edit</v-list-tile-title>
+                </v-list-tile>
+              </v-list-item>
+              <v-list-item>
+                <v-list-tile>
+                  <v-list-tile-title>Reset Password</v-list-tile-title>
+                </v-list-tile>
+              </v-list-item>
+              <v-list-item>
+                <v-list-tile>
+                  <v-list-tile-title>Delete</v-list-tile-title>
+                </v-list-tile>
+              </v-list-item>
+            </v-list>
+          </v-menu>
+        </td>
+      </tr>
+    </template>
+  </tbody>
+</table>
+
             </div>
           </v-container>
         </v-content>
@@ -97,7 +144,7 @@
 
       data: {
         item: {
-          text: 'Get Started'
+          text: 'meow mix'
         }
       }
     })
